@@ -42,11 +42,16 @@ class AppRoutes {
         icon: Icons.play_arrow,
         name: "Animated Container",
         screen: const AnimatedScreen()),
-        MenuOption(
+    MenuOption(
         route: "inputs",
         icon: Icons.input_rounded,
         name: "Forms: Inputs",
         screen: const InputsScreen()),
+    MenuOption(
+        route: "slider",
+        icon: Icons.slow_motion_video,
+        name: "Sliders & Checks",
+        screen: const SliderScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

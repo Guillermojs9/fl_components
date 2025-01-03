@@ -24,39 +24,73 @@ class InputsScreen extends StatelessWidget {
             key: myFormKey,
             child: Column(
               children: [
-                const CustomTextFormField(
+                CustomTextFormField(
                   hintText: "Nombre",
                   labelText: "Nombre del saiyajin",
                   helperText: "Solo saiyanjines",
                   icon: Icons.assignment_ind,
                   suffixIcon: Icons.group_add_outlined,
+                  formProperty: "nombre",
+                  formValues: formValues,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const CustomTextFormField(
+                CustomTextFormField(
                   hintText: "Mote",
                   labelText: "Mote del saiyajin",
                   icon: Icons.supervised_user_circle,
+                  formProperty: "mote",
+                  formValues: formValues,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const CustomTextFormField(
+                CustomTextFormField(
                   hintText: "E-mail",
                   labelText: "E-Mail del saiyajin",
                   icon: Icons.email,
                   keyboardType: TextInputType.emailAddress,
+                  formProperty: "email",
+                  formValues: formValues,
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const CustomTextFormField(
+                CustomTextFormField(
                   hintText: "Contraseña",
                   labelText: "Contraseña del saiyajin",
                   icon: Icons.password,
                   obscureText: true,
+                  formProperty: "password",
+                  formValues: formValues,
                 ),
+                const SizedBox(
+                  height: 30,
+                ),
+                DropdownButtonFormField(
+                    items: const [
+                      DropdownMenuItem(
+                        child: Text("Saiyajin"),
+                        value: "saiyajin",
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Namekiano"),
+                        value: "namekiano",
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Arcosiano"),
+                        value: "arcosiano",
+                      ),
+                      DropdownMenuItem(
+                        child: Text("Majin"),
+                        value: "majin",
+                      ),
+                    ],
+                    onChanged: (value) {
+                      print(value);
+                      formValues["role"] = value ?? "terricola";
+                    }),
                 const SizedBox(
                   height: 30,
                 ),
